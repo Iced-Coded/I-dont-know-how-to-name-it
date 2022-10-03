@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Slider - Range with fixed maximum</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#slider-range-max" ).slider({
+      range: "max",
+      min: 1,
+      max: 10,
+      value: 10,
+      slide: function( event, ui ) {
+        $( "#amount" ).val( ui.value );
+      }
+    });
+    $( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) );
+  } );
+  </script>
+</head>
+<body>
+<h1>
+    BMW X3
+</h1>
+<img width="500" src="bmw.jpg" alt="Image of Mercedes-Benz C216."></img>
+<p>Specifications</p>
+<li>
+    <ul>Production: <span>2003-Present</span></ul>
+    <ul>Body Style: <span>5-door SUV</span></ul>
+    <ul>Layout: <span>N/A</span></ul>
+    <ul>Engine: <span>3.0L N52 straight-6</span></ul>
+</li>
+<p>
+  <label for="amount">Rating:</label>
+  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+</p>
+<div id="slider-range-max" style="width: 45%"></div>
+</body>
+</html>
